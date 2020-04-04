@@ -1,0 +1,80 @@
+nav{
+    display: block;
+    background-color: #ff657d;
+    height: 70px;
+    width: 100%;
+}
+::-webkit-scrollbar-track {
+    background-color: #F4F4F4;
+}
+::-webkit-scrollbar {
+    width: 6px;
+    background: #FF69B4;
+}
+::-webkit-scrollbar-thumb {
+    background: #3fa4eb;
+}
+nav img{
+    height: 90px;
+    margin-top: -20px;
+}
+nav a{
+    text-decoration: none;
+    padding-right: 2px;
+    color: #3fa4eb;
+    font-family: Quicksand, Arial;
+    font-size: 16px;
+    margin-left: 120px;
+
+}
+nav a:hover{
+    text-decoration: none;
+    
+    color: white;
+}
+.rounded-circle{
+    height: 50px;
+    margin-left: 450px;
+    margin-top: -8px;
+}
+#nome{
+    margin-left:15px;
+     font-family: Quicksand, Arial;
+      margin-top: 3px;
+}
+#shop{
+    margin-top: 50px;
+}
+/* equal card height */
+.row-equal > div[class*='col-'] {
+    display: flex;
+    flex: 1 0 auto;
+}
+
+.row-equal .card {
+   width: 100%;
+}
+
+/* ensure equal card height inside carousel */
+.carousel-inner>.row-equal.active, 
+.carousel-inner>.row-equal.next, 
+.carousel-inner>.row-equal.prev {
+    display: flex;
+}
+
+/* prevent flicker during transition */
+.carousel-inner>.row-equal.active.left, 
+.carousel-inner>.row-equal.active.right {
+    opacity: 0.5;
+    display: flex;
+}
+
+
+/* control image height */
+.card-img-top-250 {
+    max-height: 250px;
+    overflow:hidden;
+}
+#j{
+    background-color: #ff657d; 
+}
