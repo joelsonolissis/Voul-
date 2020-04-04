@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta  charset="UTF-8">
+	<title>Voulá</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Arimo|Montserrat|Noto+Sans|Open+Sans|PT+Sans|PT+Sans+Narrow|Poppins|Quicksand|Raleway|Roboto|Roboto+Mono|Roboto+Slab|Shrikhand|Slabo+27px|Source+Sans+Pro|Tajawal|Titillium+Web|Ubuntu" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="cssindex.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+         
+        <link rel="stylesheet" type="text/css" href="animate.css">
+          <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+
+
+
+     </head>
+<body>
+
+<header>
+
+       <div class="jumbotron animated bounceInDown">
+         <img src="imagens/VOULÁ.jpg" class="animated bounceInDown">
+        <div class="container" id="cont">
+          <h1 class="display-3 animated bounceInDown">Olá!</h1>
+          <p class="animated bounceInDown">Somos a Voulá uma plataforma que faz compras por ti! isso mesmo, somos uma plataforma em que vamos até ao seu supermercado favorito e compramos aquilo da tua preferência e ainda levamos até si!! e ainda mais o pagamento pode ser online ou no momento da entraga das compras, não é fantástico !?</p>
+           <button class="btn btn-primary btn-lg animated bounceInDown" href="#" role="button" onclick="Mudarestado('minhaDiv')" id="bu">Cadastrar-se &raquo;</button>
+           <div id="divId" class="hidden">
+               <div class="jumbotron" id="minhaDiv">
+                   <h1>Cadastro</h1>
+                   <form action="cadastro.php" method="POST" name="cada">
+                    <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Nome completo:</span>
+  </div>
+  <input type="text" aria-label="First name" class="form-control" id="nome" name="nome" placeholder="Nome completo" required>
+
+</div>
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">Email:</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" id="email"  name="email" required>
+</div>
+<div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">+244</span>
+  </div>
+  <input type="text" class="form-control" placeholder="Telefone" aria-label="Username" aria-describedby="basic-addon1" id="tel" name="tel" onkeyup="somenteNumeros(this)" maxlength="9" required>
+</div>
+<div class="form-group">
+    <label for="exampleInputPassword1">Senha</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite a sua senha" id="senha" name="senha" required autofocus>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Digite novamente sua senha</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Digite a sua senha" required>
+  </div>
+  <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me" id="checkbox"> Concorda com os 
+          </label>
+          <a href="#">Termos de uso e privacidade?</a>
+        </div>
+
+        <script>
+    function somenteNumeros(num) {
+        var er = /[^0-9.]/;
+        er.lastIndex = 0;
+        var campo = num;
+        if (er.test(campo.value)) {
+          campo.value = "";
+          alert("Digite somente números");
+        }
+    }
+ </script>
+<button type="button submit" class="btn btn-primary" id="cd">Cadastrar</button>
+ </form>
+               </div>
+           </div>
+           <script type="text/javascript">
+             function Mudarestado(el) {
+        var display = document.getElementById(el).style.display;
+        if(display == "none")
+            document.getElementById(el).style.display = 'block';
+        else
+            document.getElementById(el).style.display = 'none';
+    }
+           </script>
+  </div>
+</div>
+</header>
+<section>
+    <script type="text/javascript">
+        $(document).ready(function() {
+  // Check if element is scrolled into view
+  function isScrolledIntoView(elem) {
+    var docViewTop = $(window).scrollTop();
+    var docViewBottom = docViewTop + $(window).height();
+
+    var elemTop = $(elem).offset().top;
+    var elemBottom = elemTop + $(elem).height();
+
+    return ((elemBottom <= docViewBottom) && (elemTop >= docViewTop));
+  }
+  // If element is scrolled into view, fade it in
+  $(window).scroll(function() {
+    $('.scroll-animations .animated').each(function() {
+      if (isScrolledIntoView(this) === true) {
+        $(this).addClass('fadeInLeft');
+      }
+    });
+  });
+});
+    </script>
+    <div class="jumbotron scroll-animations" id="paise">
+        <div class="container animated">
+
+      <form class="form-signin animated" method="POST" action="conexao.php">
+        <h2 class="form-signin-heading" id="formti">Realize o Login</h2>
+        <label for="inputEmail" class="sr-only">Email</label>
+        <input type="email" id="inputEmail" class="form-control" placeholder="Email" name="inputEmail" required autofocus>
+        <label for="inputPassword" class="sr-only">Senha</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Senha" name="inputPassword" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Lembrar-me
+          </label>
+          <a href="redsenha.html">Esqueceu sua senha?</a>
+        </div>
+      <button class="loginBtn loginBtn--facebook">
+  Entre com o Facebook
+</button>
+        <button class="btn btn-lg btn-primary btn-block click-animations new-section" id="entrar" type="submit" name="entrar">Entrar</button>
+      </form>
+
+    </div>
+    </div>
+
+</section>
+<footer class="text-center">
+  
+  <p>© 2018. Criado por <a href="https://www.facebook.com/starweb.tec/" data-toggle="tooltip" title="Visite fanpage StarWeb">StarWeb</a></p><br>
+  <div id="atalhos">
+  <a href="https://www.facebook.com/starweb.tec/" data-toggle="tooltip" title="Visite fanpage StarWeb">Termo de uso</a>
+  <a href="https://www.facebook.com/starweb.tec/" data-toggle="tooltip" title="Visite fanpage StarWeb">Privacidade</a>
+  <a href="https://www.facebook.com/starweb.tec/" data-toggle="tooltip" title="Visite fanpage StarWeb">Cookies</a>
+  <a href="https://www.facebook.com/starweb.tec/" data-toggle="tooltip" title="Visite fanpage StarWeb">Carreiras</a>
+  <a href="https://www.facebook.com/starweb.tec/" data-toggle="tooltip" title="Visite fanpage StarWeb">Ajuda</a>
+  </div>
+</footer>
+</body>
+</html>
